@@ -1,0 +1,35 @@
+const fs = require('fs');
+
+fs.readdir("./resources", (error, files) => {
+    if (error){
+        console.log(error);
+    }
+    console.log(files);
+});
+
+fs.readFile('./resources/readme','UTF-8', (error, data) => {
+    if(error){
+        console.log(error);
+    }
+    console.log(data);
+})
+
+console.log("I am first");
+
+
+console.log(process.argv)
+
+
+process.stdout.write("hello process")
+
+
+const question = [
+    "What's your name?",
+    "What's your favorite hobby?"
+]
+
+const ask = (i) =>{
+    process.stdout.write(`\n ${question[i]}`);
+}
+
+ask(0);

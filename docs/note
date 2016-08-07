@@ -1,0 +1,3 @@
+`const` means that the identifier can’t be reassigned.
+
+`let`, is a signal that the variable may be reassigned. (I use `let` when I need to reassign a variable.)
