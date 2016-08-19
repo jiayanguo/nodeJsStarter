@@ -2,13 +2,15 @@
  * Created by jiayanguo on 8/18/16.
  */
 //lets require/import the mongodb native drivers.
-var mongodb = require('mongodb');
+
+'use strict'
+const mongodb = require('mongodb');
 
 //We need to work with "MongoClient" interface in order to connect to a mongodb server.
-var MongoClient = mongodb.MongoClient;
+const MongoClient = mongodb.MongoClient;
 
 // Connection URL. This is where your mongodb server is running.
-var url = 'mongodb://localhost:27017/test';
+const url = 'mongodb://localhost:27017/test';
 
 // Use connect method to connect to the Server
 MongoClient.connect(url, function (err, db) {
@@ -19,7 +21,7 @@ MongoClient.connect(url, function (err, db) {
         console.log('Connection established to', url);
 
         // Get the documents collection
-        var collection = db.collection('users');
+        let collection = db.collection('users');
 
         // Insert some users
         collection.find({username: 'gjy'}).toArray(function (err, result) {
@@ -32,6 +34,7 @@ MongoClient.connect(url, function (err, db) {
             }
             //Close connection
             db.close();
+            console.log("db connection closed.")
         });
     }
 });
